@@ -230,8 +230,7 @@ import{c as b}from"./vendor.89d34af6.js";const g=function(){const a=document.cre
       <p>La palabra era <strong>${this.secretWord}</strong>.</p>
       <hr>
       <div class="text-to-select">
-        <h3>WORDLE MANZDEV ${this.winner?":)":":("}</h3>
-        <p class="link"><a href="https://wordle.manz.dev/">wordle.manz.dev</a></p>
+        <h3>WORDLE GabrielRIP ${this.winner?":)":":("}</h3>
         <p>Tu partida (${this.secretWord}):</p>
 
         ${this.getStats()}

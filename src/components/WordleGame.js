@@ -47,7 +47,7 @@ class WordleGame extends HTMLElement {
         font-weight: lighter;
         font-size: 1rem;
         text-align: center;
-        margin: 0;
+        margin-top: .5rem;
       }
 
       h2 a {
@@ -62,6 +62,7 @@ class WordleGame extends HTMLElement {
       .words {
         display: flex;
         flex-direction: column;
+        align-items: center;
         font-weight: bold;
       }
     `

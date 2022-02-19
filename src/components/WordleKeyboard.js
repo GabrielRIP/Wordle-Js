@@ -10,7 +10,7 @@ class WordleKeyboard extends HTMLElement {
   static get styles() {
     return `
       :host {
-        --size-letter: 33px;
+        --size-letter: 28px;
       }
       .container {
         display: flex;
@@ -18,7 +18,7 @@ class WordleKeyboard extends HTMLElement {
         align-items: flex-start;
         flex-wrap: wrap;
         gap: 4px 2px;
-        width: 415px;
+        width: 360px;
         margin: 1rem 0;
       }
 
@@ -40,7 +40,7 @@ class WordleKeyboard extends HTMLElement {
       }
 
       .letter.special {
-        width: 53.5px;
+        width: 50px;
         color: #404040;
       }
 

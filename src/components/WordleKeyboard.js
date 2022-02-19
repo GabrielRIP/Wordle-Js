@@ -15,7 +15,9 @@ class WordleKeyboard extends HTMLElement {
       .container {
         display: flex;
         justify-content: center;
+        align-items: flex-start;
         flex-wrap: wrap;
+        gap: 4px 2px;
         width: 415px;
         margin: 1rem 0;
       }
@@ -25,20 +27,62 @@ class WordleKeyboard extends HTMLElement {
         justify-content: center;
         align-items: center;
         font-family: Arial;
+        background: #777;
+        color: #fff;
         font-weight: bold;
         text-transform: uppercase;
         width: var(--size-letter);
         height: var(--size-letter);
         border: 2px solid #ccc;
-        margin: 3px 2px;
         border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
       }
 
       .letter.special {
         width: 53.5px;
         color: #404040;
       }
+
+      .letter.used {
+        background: var(--used-color);
+        color: #fff;
+      }
+
+      .letter.exist {
+        background: var(--exist-color);
+        color: #fff;
+      }
+
+      .letter.exact {
+        background: var(--exact-color);
+        color: #fff;
+      }
     `
+  }
+
+  setLetter(key, state) {
+    const letter = this.letters.find(letter => letter.key === key)
+    if (letter.state !== 'exact') {
+      letter.state = state
+    }
+    this.render()
+  }
+
+  sendListeners() {
+    const keys = Array.from(this.shadowRoot.querySelectorAll('.letter'))
+    keys.forEach(key => {
+      key.addEventListener('click', () => {
+        const detail = key.textContent.replace('NEXT', 'enter').replace('BACK', 'backspace')
+        const optionsEvent = {
+          detail,
+          bubbles: true,
+          composed: true
+        }
+        const evento = new CustomEvent('keyboard', optionsEvent)
+        this.dispatchEvent(evento)
+      })
+    })
   }
 
   connectedCallback() {
@@ -58,6 +102,7 @@ class WordleKeyboard extends HTMLElement {
         ${this.getKeyboardInitial()}
       </div>
     `
+    this.sendListeners()
   }
 }
 

@@ -238,7 +238,7 @@ import{c as b}from"./vendor.89d34af6.js";const g=function(){const a=document.cre
       </div>
       <button class="select">Select & Copy</button>
       <button class="close">X</button>
-    </div>`}}customElements.define("wordle-summary",u);const f=new Audio("sounds/lose.mp3"),v=new Audio("sounds/win.mp3"),j=["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","\xF1","z","x","c","v","b","n","m"];class d extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"}),this.startGame()}static get styles(){return`
+    </div>`}}customElements.define("wordle-summary",u);const f=new Audio("/sounds/lose.mp3"),v=new Audio("/sounds/win.mp3"),j=["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","\xF1","z","x","c","v","b","n","m"];class d extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"}),this.startGame()}static get styles(){return`
       :host {
         --exact-color: #6aaa64;
         --exist-color: #c9b458;
